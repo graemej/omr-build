@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ex
+git clone https://github.com/rubyomr-preview/ruby.git --branch ruby_2_2_omr --recursive 
+cd ruby
+autoconf
+./configure SPEC=linux_x86-64 --with-omr-jit
+make
+make install
